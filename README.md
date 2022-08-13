@@ -1,6 +1,6 @@
 # @neos21/simple-notify : Simple Notify
 
-[![NPM Version](https://img.shields.io/npm/v/@neos21/simple-notify.svg)](https://www.npmjs.com/package/@neos21/simple-notify) [![GPR Version](https://img.shields.io/github/package-json/v/neos21/simple-notify?label=github)](https://github.com/Neos21/simple-notify/packages/__ID__)
+[![NPM Version](https://img.shields.io/npm/v/@neos21/simple-notify.svg)](https://www.npmjs.com/package/@neos21/simple-notify) [![GPR Version](https://img.shields.io/github/package-json/v/neos21/simple-notify?label=github)](https://github.com/Neos21/simple-notify/pkgs/npm/simple-notify)
 
 デスクトップ通知を発信するコマンドラインツール。Windows・MacOS・Linux に対応。
 
