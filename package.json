@@ -1,0 +1,26 @@
+{
+  "name": "@neos21/simple-notify",
+  "version": "0.0.0",
+  "description": "Simple Notify",
+  "main": "index.js",
+  "bin": {
+    "simple-notify": "index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Neo <neos21@gmail.com> (https://neos21.net/)",
+  "license": "MIT",
+  "homepage": "https://github.com/Neos21/simple-notify#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neos21/simple-notify.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Neos21/simple-notify/issues"
+  },
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Neos21"
+  }
+}
