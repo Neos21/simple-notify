@@ -6,6 +6,12 @@ const util         = require('util');
 
 const execFileAsync = util.promisify(childProcess.execFile);
 
+/**
+ * Detect OS And Set Command And Arguments
+ * 
+ * @param {string} message Raw Message
+ * @return {{cmd: string | null; args: Array<string> | null}} Command And Arguments
+ */
 const detectOS = message => {
   // Windows (Command Prompt・PowerShell・GitBash or WSL) : Use PowerShell ToastNotification
   if(process.platform === 'win32' || (process.platform === 'linux' && os.release().toLowerCase().includes('microsoft'))) return {
@@ -20,7 +26,7 @@ const detectOS = message => {
   // MacOS : Use AppleScript
   if(process.platform === 'darwin') return {
     cmd : 'osascript',
-    args: ['-e', '\'display notification "', message, '" with title "Notification"\'']
+    args: ['-e', `display notification "${message.replace((/"/g), '\\"')}" with title "Notification"`]
   };
   
   // Linux : Use notify-send
@@ -46,6 +52,7 @@ const detectOS = message => {
   try {
     const result = await execFileAsync(cmd, args);
     if(result.stderr) throw new Error(result.stderr);
+    if(process.env.DEBUG_SIMPLE_NOTIFY) console.log({ cmd, args, result });
   }
   catch(error) {
     console.error(error);
