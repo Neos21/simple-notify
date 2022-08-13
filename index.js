@@ -31,7 +31,7 @@ const detectOS = message => {
   
   // Linux : Use notify-send
   if(process.platform === 'linux') return {
-    cmd : 'notify-sensd',
+    cmd : 'notify-send',
     args: [message]
   };
   
